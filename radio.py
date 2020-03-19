@@ -26,6 +26,14 @@ def toggle_radio_on():
     player.stop()
     playing= False
 
+def toggle_radio_off():
+  global playing
+  if not playing:
+    player.play()
+    playing = False
+  else:
+    player.stop()
+    playing= True
 
 #create window
 root = tk.Tk()
@@ -36,8 +44,8 @@ canvas.pack()
 # background_label= tk.Label(image=background_image)
 # background_label.place(relwidth=1, relheight=1)
 
-# playButtonImage = tk.PhotoImage(file="background_on.png")
-# playButton = tk.Button(root, command = toggle_radio_on)
+# playButtonImage = tk.PhotoImage(file="background_off.png")
+# playButton = tk.Button(root, command = toggle_radio_off)
 # playButton.config(image = playButtonImage)
 # playButton.place(x=0, y=0)
 
